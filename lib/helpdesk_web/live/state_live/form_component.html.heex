@@ -1,0 +1,22 @@
+<div>
+  <.simple_form for={@form} phx-target={@myself} phx-change="validate" phx-submit="save">
+    <.input name="subject" type="text" field={@form[:subject]} />
+    <.input
+      name="state"
+      type="select"
+      field={@form[:state]}
+      options={[
+        {gettext("State A"), :state_a},
+        {gettext("State B"), :state_b},
+        {gettext("State C"), :state_c},
+        {gettext("State D"), :state_d},
+        {gettext("State E"), :state_e}
+      ]}
+    />
+    <:actions>
+      <.button phx-disable-with={gettext("Saving...")}>
+        <%= gettext("Save") %>
+      </.button>
+    </:actions>
+  </.simple_form>
+</div>

@@ -15,13 +15,13 @@ defmodule HelpdeskWeb.StateLive.FormComponent do
   end
 
   @impl true
-  def handle_event("validate", params, socket) do
+  def handle_event("validate", %{"form" => params}, socket) do
     form = Form.validate(socket.assigns.form, params)
     {:noreply, assign(socket, form: form)}
   end
 
   @impl true
-  def handle_event("save", params, socket) do
+  def handle_event("save", %{"form" => params}, socket) do
     case AshPhoenix.Form.submit(socket.assigns.form, params: params) do
       {:ok, ticket} ->
         {:noreply,

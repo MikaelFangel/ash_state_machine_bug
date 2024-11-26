@@ -52,7 +52,7 @@ defmodule Helpdesk.Support.Ticket do
 
     attribute :subject, :string, allow_nil?: false, public?: true
 
-    attribute :status, :atom do
+    attribute :state, :atom do
       constraints one_of: @valid_states
       default :state_a
       allow_nil? false

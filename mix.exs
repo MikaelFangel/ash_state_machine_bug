@@ -64,7 +64,7 @@ defmodule Helpdesk.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:ash_state_machine, "~> 0.2.6"}
+      {:ash_state_machine, github: "ash-project/ash_state_machine", branch: "main"}
     ]
   end
 
